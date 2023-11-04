@@ -8,30 +8,61 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px; /* Added padding */
+            padding: 1rem; /* Added padding */
             background: #f4f4f4;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+        }
+
+        .disclaimer {
+            background-color: #ffdd57;
+            padding: 10px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            margin-bottom: 20px;
+            margin-top: 20px;  /* Added margin-top */
+            text-align: center;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .disclaimer-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .keyword {
+            color: red;
+            font-weight: bold;
         }
         h1 {
             color: #333;
         }
         form {
             background: white;
-            padding: 20px;
+            padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
+            margin: 1rem auto;
             width: 90%;
             max-width: 500px;
             box-sizing: border-box;
         }
+        label a {
+        text-decoration: none;
+        color: #085074; /* Change this to whatever color you prefer */
+        font-weight: bold; /* Optional: Makes the link bold */
+        }
+        label a:hover {
+        text-decoration: underline;
+        }
+
         label {
             display: block;
             margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
         }
         input[type="file"],
         textarea,
@@ -51,10 +82,16 @@
             cursor: pointer;
             margin-top: 10px;
             padding: 15px; /* Increased padding for larger buttons */
+            font-size: 1rem;
         }
         input[type="submit"]:hover {
             background: #4cae4c;
         }
+        .cleanup-button {
+        background-color: red !important;
+        }
+
+
 
         @media (max-width: 575.98px) {
             form {
@@ -65,8 +102,12 @@
     </style>
 </head>
 <body>
-    <h1>Text to Speech Converter</h1>
 
+    <h1>Text to Speech Generator</h1>
+    <div class="disclaimer">
+        <span class="disclaimer-title">Privacy Disclaimer</span><br>
+        No personal information is stored on this server and diligent measures are employed to protect your data. <br>However, absolute security cannot be guaranteed due to the inherent risks of online data transmission. <br>For added security, before exiting the browser, please click on <br><span class="keyword">"Cleanup Uploaded or Generated Files"</span><br> to ensure all your data on the server is erased. <br>Utilize this service with awareness and at your own discretion.
+    </div>
     <form action="/" method="post">
         <label for="text">Enter text:</label>
         <textarea id="text" name="text" rows="4"></textarea>
@@ -84,15 +125,14 @@
     </form>
 
     <form action="/" method="post" enctype="multipart/form-data">
-        <label for="file">or Upload SSML file:</label>
+        <label for="file">Upload <a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-synthesis-markup-structure#document-structure" target="_blank">SSML</a> file:</label>
         <input type="file" id="file" name="file">
         <input type="submit" value="Convert SSML to Speech">
     </form>
 
-
-
     <form action="/cleanup" method="post">
-        <input type="submit" value="Cleanup Generated Files">
+        <input type="submit" value="Cleanup Uploaded or Generated Files" class="cleanup-button">
     </form>
+
 </body>
 </html>
