@@ -131,7 +131,7 @@ def cleanup():
         except OSError as e:
             print(f"Error deleting uploaded file {f}: {e.strerror}")
 
-    return 'Cleaned up generated and uploaded files.', 200
+    return render_template('cleanup.html'), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False)
