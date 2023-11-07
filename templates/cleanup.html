@@ -1,43 +1,62 @@
-<!-- templates/cleanup.html -->
-<html>
-    <head>
-        <title>Data Cleanup</title>
-        <style type="text/css">
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f4;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-            }
-            .container {
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 5px;
-                text-align: center;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            }
-            .message {
-                font-size: 20px;
-                margin-bottom: 20px;
-            }
-            .header {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">Data Cleanup Complete</div>
-            <div class="message">
-                Your data has been securely deleted. Thank you for using this service.
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Cleanup</title>
+    <style type="text/css">
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: 0 20px;
+        }
+        .header {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+        .message {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        .home-link {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .home-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Data Cleanup Complete</div>
+        <div class="message">
+            Your data has been securely deleted. Thank you for using our service.
         </div>
-    </body>
+        <a href="/" class="home-link">Return to Homepage</a>
+    </div>
+</body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file, redirect, url_for
 import os
 from dotenv import load_dotenv
 import azure.cognitiveservices.speech as speechsdk
@@ -37,6 +37,29 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+# @app.route('/', methods=['GET', 'POST'])
+# def index():
+#     if request.method == 'POST':
+#         if 'file' in request.files:
+#             file = request.files['file']
+#             if file and allowed_file(file.filename):
+#                 filename = secure_filename(file.filename)
+#                 file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+#                 file.save(file_path)
+#                 # Process the SSML file
+#                 output_path = text_to_speech_from_ssml_file(file_path)
+#                 return send_file(output_path, as_attachment=True)
+#         else:
+#             # Process the default text
+#             text = request.form['text']
+#             language_voice = request.form['language_voice']
+#             language, voice = language_voice.split(':', 1)
+#             output_path = text_to_speech(text, language, voice)
+#             return send_file(output_path, as_attachment=True)
+    
+#     # GET request so render the form
+#     return render_template('index.html', languages_voices=languages_voices)
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -48,17 +71,29 @@ def index():
                 file.save(file_path)
                 # Process the SSML file
                 output_path = text_to_speech_from_ssml_file(file_path)
-                return send_file(output_path, as_attachment=True)
+                # Redirect to player instead of sending file
+                return redirect(url_for('player', filename='output_from_ssml.wav'))
         else:
             # Process the default text
             text = request.form['text']
+            if not text.strip():  # Check if the text is not just whitespace
+                # Handle the empty text box case appropriately
+                # For instance, you can render the form again with an error message
+                error_message = "The text box is empty. Please enter some text to synthesize."
+                return render_template('index.html', error_message=error_message, languages_voices=languages_voices)
+
             language_voice = request.form['language_voice']
             language, voice = language_voice.split(':', 1)
             output_path = text_to_speech(text, language, voice)
-            return send_file(output_path, as_attachment=True)
-    
+            # Redirect to player instead of sending file
+            return redirect(url_for('player', filename='output.wav'))
+
     # GET request so render the form
     return render_template('index.html', languages_voices=languages_voices)
+
+
+
+
 
 def text_to_speech(text, language, voice):
     subscription_key = os.getenv('KEY')
@@ -132,6 +167,28 @@ def cleanup():
             print(f"Error deleting uploaded file {f}: {e.strerror}")
 
     return render_template('cleanup.html'), 200
+
+@app.route('/download', methods=['GET'])
+def download():
+    output_filename = 'output.wav'  # You can make this dynamic if needed
+    output_path = os.path.join('outputs', output_filename)
+
+    if os.path.isfile(output_path):
+        return send_file(output_path, as_attachment=True)
+    else:
+        return render_template('404.html'), 404
+
+@app.route('/audio/<filename>')
+def audio(filename):
+    return send_file(os.path.join('outputs', filename), mimetype='audio/wav')
+
+
+@app.route('/player')
+def player():
+    # Retrieve the filename from the query parameter
+    filename = request.args.get('filename', 'output.wav')
+    return render_template('player.html', audio_file=filename)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False)
