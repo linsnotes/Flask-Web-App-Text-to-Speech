@@ -30,35 +30,17 @@ languages_voices = {
 "English (United States)": ["en-US-JennyMultilingualNeural", "en-US-JennyNeural", "en-US-GuyNeural", "en-US-AriaNeural", "en-US-DavisNeural", "en-US-AmberNeural", "en-US-AnaNeural", "en-US-AshleyNeural", "en-US-BrandonNeural", "en-US-ChristopherNeural", "en-US-CoraNeural", "en-US-ElizabethNeural", "en-US-EricNeural", "en-US-JacobNeural", "en-US-JaneNeural", "en-US-JasonNeural", "en-US-MichelleNeural", "en-US-MonicaNeural", "en-US-NancyNeural", "en-US-RogerNeural", "en-US-SaraNeural", "en-US-SteffanNeural", "en-US-TonyNeural", "en-US-AIGenerate1Neural", "en-US-AIGenerate2Neural", "en-US-AndrewNeural1", "en-US-BlueNeural1", "en-US-BrianNeural", "en-US-EmmaNeural", "en-US-JennyMultilingualV2Neural", "en-US-RyanMultilingualNeural"],
 "Chinese (Mandarin, Simplified)": ["zh-CN-XiaoxiaoNeural", "zh-CN-YunxiNeural", "zh-CN-YunjianNeural", "zh-CN-XiaoyiNeural", "zh-CN-YunyangNeural", "zh-CN-XiaochenNeural", "zh-CN-XiaohanNeural", "zh-CN-XiaomengNeural", "zh-CN-XiaomoNeural", "zh-CN-XiaoqiuNeural", "zh-CN-XiaoruiNeural", "zh-CN-XiaoshuangNeural", "zh-CN-XiaoxuanNeural", "zh-CN-XiaoyanNeural", "zh-CN-XiaoyouNeural", "zh-CN-XiaozhenNeural", "zh-CN-YunfengNeural", "zh-CN-YunhaoNeural", "zh-CN-YunxiaNeural", "zh-CN-YunyeNeural", "zh-CN-YunzeNeural", "zh-CN-XiaorouNeural", "zh-CN-YunjieNeural"],
 "Chinese (Taiwanese Mandarin, Traditional)": ["zh-TW-HsiaoChenNeural", "zh-TW-YunJheNeural", "zh-TW-HsiaoYuNeural"],
+"Chinese (Cantonese, Simplified)": ["yue-CN-XiaoMinNeural", "yue-CN-YunSongNeural"],
+"Chinese (Cantonese, Traditional)": ["zh-HK-HiuMaanNeural", "zh-HK-WanLungNeural", "zh-HK-HiuGaaiNeural"],
+"Chinese (Shandong, Simplified)": ["zh-CN-shandong-YunxiangNeural"],
+"Chinese (Liaoning, Simplified)": ["zh-CN-liaoning-XiaobeiNeural"],
+"Chinese (Sichuan, Simplified)": ["zh-CN-sichuan-YunxiNeural"],
 }
 
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-# @app.route('/', methods=['GET', 'POST'])
-# def index():
-#     if request.method == 'POST':
-#         if 'file' in request.files:
-#             file = request.files['file']
-#             if file and allowed_file(file.filename):
-#                 filename = secure_filename(file.filename)
-#                 file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-#                 file.save(file_path)
-#                 # Process the SSML file
-#                 output_path = text_to_speech_from_ssml_file(file_path)
-#                 return send_file(output_path, as_attachment=True)
-#         else:
-#             # Process the default text
-#             text = request.form['text']
-#             language_voice = request.form['language_voice']
-#             language, voice = language_voice.split(':', 1)
-#             output_path = text_to_speech(text, language, voice)
-#             return send_file(output_path, as_attachment=True)
-    
-#     # GET request so render the form
-#     return render_template('index.html', languages_voices=languages_voices)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
