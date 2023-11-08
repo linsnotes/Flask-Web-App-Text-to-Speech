@@ -9,38 +9,43 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 1rem;
+            padding: 50px;
             background: #f4f4f4;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start; 
-            min-height: 140vh; 
+            min-height: 100vh; 
             position: relative; 
         }
 
-        .disclaimer {
-            background-color: #ffdd57;
-            padding: 10px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 500px;
-            margin: 0.5rem auto;
-            text-align: center;
+        .navbar {
+            width: 100%;
+            background-color: black;
+            overflow: auto;
+            position: fixed; /* Fix the navbar to the top */
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: right;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
             font-size: 14px;
-            box-sizing: border-box;
-        }
-        .disclaimer-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            
-        }
-        .keyword {
-            color: red;
+            text-align: center;
             font-weight: bold;
         }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+
         h1 {
-            color: #333;
+            color: black;
             text-align: center;
         }
         form {
@@ -48,7 +53,7 @@
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 0.5rem auto;
+            margin: 0.3rem auto;
             width: 90%;
             max-width: 500px;
             box-sizing: border-box;
@@ -139,10 +144,6 @@
             margin-right: 8px;
         }
 
-
-
-
-
         @media (max-width: 575.98px) {
             form {
                 width: 95%;
@@ -152,12 +153,13 @@
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="https://github.com/linsnotes/Flask-Web-App-Text-to-Speech" target="_blank">Source Code</a>
+        <a href="/disclaimer" method="post">Disclaimer</a>
+    </div>
 
     <h1>Text to Speech Generator</h1>
-    <div class="disclaimer">
-        <span class="disclaimer-title">Privacy Disclaimer</span><br>
-        No personal information is stored on this server and diligent measures are employed to protect your data. <br>However, absolute security cannot be guaranteed due to the inherent risks of online data transmission. <br>For added security, before exiting the browser, please click on <br><span class="keyword">"Clear SSML & Audio Data"</span><br> to ensure all your data on the server is erased. <br>Utilize this service with awareness and at your own discretion.
-    </div>
+
     <form action="/" method="post">
         <label for="text">Enter text:</label>
         <textarea id="text" name="text" rows="4"></textarea>

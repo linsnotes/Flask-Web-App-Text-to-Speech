@@ -171,6 +171,9 @@ def player():
     filename = request.args.get('filename', 'output.wav')
     return render_template('player.html', audio_file=filename)
 
+@app.route('/disclaimer')
+def disclaimer():
+    return render_template('disclaimer.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False)

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Text to Speech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            overflow: auto;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: right;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add some padding to the body to avoid content overlay with fixed navbar */
+        body {
+            padding-top: 60px;
+        }
+
+        .disclaimer {
+            background-color: #ffdd57;
+            padding: 10px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            margin: 0.5rem auto;
+            text-align: center;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .disclaimer-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .keyword {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Additional styling can go here */
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#disclaimer">Disclaimer</a>
+        <a href="/cleanup">Clear Data</a>
+        <a href="https://github.com/your-github/repo" target="_blank">Source Code</a>
+    </div>
+
+    <div id="disclaimer" class="disclaimer">
+        <span class="disclaimer-title">Privacy Disclaimer</span><br>
+        No personal information is stored on this server and diligent measures are employed to protect your data. <br>However, absolute security cannot be guaranteed due to the inherent risks of online data transmission. <br>For added security, before exiting the browser, please click on <br><span class="keyword">"Clear SSML & Audio Data"</span><br> to ensure all your data on the server is erased. <br>Utilize this service with awareness and at your own discretion.
+    </div>
+
+    <!-- The rest of your page content goes here -->
+
+</body>
+</html>
