@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Text to Speech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 1rem; /* Added padding */
+            padding: 1rem;
             background: #f4f4f4;
             display: flex;
             flex-direction: column;
@@ -92,6 +93,36 @@
         background-color: red !important;
         }
 
+        .footer {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            margin: 1rem auto;
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #085074;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .fa-github {
+            margin-right: 8px;
+        }
+
+
+
 
 
         @media (max-width: 575.98px) {
@@ -135,8 +166,12 @@
         <input type="submit" value="Clear SSML & Audio Data" class="cleanup-button">
     </form>
 
-
-
+    <footer class="footer">
+        <a href="https://github.com/linsnotes/Flask-Web-App-Text-to-Speech" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            View the source code on GitHub
+        </a>
+    </footer>
 
 </body>
 </html>
