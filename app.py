@@ -35,6 +35,7 @@ languages_voices = {
 "Chinese (Shandong, Simplified)": ["zh-CN-shandong-YunxiangNeural"],
 "Chinese (Liaoning, Simplified)": ["zh-CN-liaoning-XiaobeiNeural"],
 "Chinese (Sichuan, Simplified)": ["zh-CN-sichuan-YunxiNeural"],
+"Chinese (Wu, Simplified)": ["wuu-CN-XiaotongNeural","wuu-CN-YunzheNeural"],
 }
 
 
