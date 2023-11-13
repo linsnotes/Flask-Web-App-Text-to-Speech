@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language List</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .language-list {
+            text-align: left;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #2a2a2a;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: normal;
+            line-height: 1.2;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 5px;
+        }
+
+        ul > li {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        ul > li > ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul > li > ul > li {
+            font-weight: normal;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .language-list {
+                padding: 15px;
+                border-radius: 5px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="language-list">
+    <h2>Available Languages</h2>
+    <ul>
+        <li>English
+            <ul>
+                <li>Singapore</li>
+                <li>United Kingdom</li>
+                <li>United States</li>
+            </ul>
+        </li>
+        <li>Chinese (Mandarin)
+            <ul>
+                <li>Mainland Mandarin</li>
+                <li>Taiwanese Mandarin</li>
+            </ul>
+        </li>
+        <li>Chinese (Dialects)
+            <ul>
+                <li>Cantonese</li>
+                <li>Shanghainese</li>
+                <li>Shandong</li>
+                <li>Liaoning</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

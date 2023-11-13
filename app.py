@@ -176,5 +176,9 @@ def player():
 def disclaimer():
     return render_template('disclaimer.html')
 
+@app.route('/language')
+def language():
+    return render_template('language.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False)
