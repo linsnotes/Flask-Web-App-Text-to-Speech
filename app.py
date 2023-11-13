@@ -29,13 +29,13 @@ languages_voices = {
 "English (United Kingdom)": ["en-GB-SoniaNeural", "en-GB-RyanNeural", "en-GB-LibbyNeural", "en-GB-AbbiNeural", "en-GB-AlfieNeural", "en-GB-BellaNeural", "en-GB-ElliotNeural", "en-GB-EthanNeural", "en-GB-HollieNeural", "en-GB-MaisieNeural", "en-GB-NoahNeural", "en-GB-OliverNeural", "en-GB-OliviaNeural", "en-GB-ThomasNeural"],
 "English (United States)": ["en-US-JennyMultilingualNeural", "en-US-JennyNeural", "en-US-GuyNeural", "en-US-AriaNeural", "en-US-DavisNeural", "en-US-AmberNeural", "en-US-AnaNeural", "en-US-AshleyNeural", "en-US-BrandonNeural", "en-US-ChristopherNeural", "en-US-CoraNeural", "en-US-ElizabethNeural", "en-US-EricNeural", "en-US-JacobNeural", "en-US-JaneNeural", "en-US-JasonNeural", "en-US-MichelleNeural", "en-US-MonicaNeural", "en-US-NancyNeural", "en-US-RogerNeural", "en-US-SaraNeural", "en-US-SteffanNeural", "en-US-TonyNeural", "en-US-AIGenerate1Neural", "en-US-AIGenerate2Neural", "en-US-AndrewNeural1", "en-US-BlueNeural1", "en-US-BrianNeural", "en-US-EmmaNeural", "en-US-JennyMultilingualV2Neural", "en-US-RyanMultilingualNeural"],
 "Chinese (Mandarin, Simplified)": ["zh-CN-XiaoxiaoNeural", "zh-CN-YunxiNeural", "zh-CN-YunjianNeural", "zh-CN-XiaoyiNeural", "zh-CN-YunyangNeural", "zh-CN-XiaochenNeural", "zh-CN-XiaohanNeural", "zh-CN-XiaomengNeural", "zh-CN-XiaomoNeural", "zh-CN-XiaoqiuNeural", "zh-CN-XiaoruiNeural", "zh-CN-XiaoshuangNeural", "zh-CN-XiaoxuanNeural", "zh-CN-XiaoyanNeural", "zh-CN-XiaoyouNeural", "zh-CN-XiaozhenNeural", "zh-CN-YunfengNeural", "zh-CN-YunhaoNeural", "zh-CN-YunxiaNeural", "zh-CN-YunyeNeural", "zh-CN-YunzeNeural", "zh-CN-XiaorouNeural", "zh-CN-YunjieNeural"],
-"Chinese (Taiwanese Mandarin, Traditional)": ["zh-TW-HsiaoChenNeural", "zh-TW-YunJheNeural", "zh-TW-HsiaoYuNeural"],
-"Chinese (Cantonese, Simplified)": ["yue-CN-XiaoMinNeural", "yue-CN-YunSongNeural"],
-"Chinese (Cantonese, Traditional)": ["zh-HK-HiuMaanNeural", "zh-HK-WanLungNeural", "zh-HK-HiuGaaiNeural"],
-"Chinese (Shandong, Simplified)": ["zh-CN-shandong-YunxiangNeural"],
-"Chinese (Liaoning, Simplified)": ["zh-CN-liaoning-XiaobeiNeural"],
-"Chinese (Sichuan, Simplified)": ["zh-CN-sichuan-YunxiNeural"],
-"Chinese (Wu, Simplified)": ["wuu-CN-XiaotongNeural","wuu-CN-YunzheNeural"],
+"Chinese (Mandarin, Taiwanese)": ["zh-TW-HsiaoChenNeural", "zh-TW-YunJheNeural", "zh-TW-HsiaoYuNeural"],
+"Chinese (Cantonese, Guangdong)": ["yue-CN-XiaoMinNeural", "yue-CN-YunSongNeural"],
+"Chinese (Cantonese, Hong Kong)": ["zh-HK-HiuMaanNeural", "zh-HK-WanLungNeural", "zh-HK-HiuGaaiNeural"],
+"Chinese (Shandong Dialect)": ["zh-CN-shandong-YunxiangNeural"],
+"Chinese (Liaoning Dialect)": ["zh-CN-liaoning-XiaobeiNeural"],
+"Chinese (Sichuan Dialect)": ["zh-CN-sichuan-YunxiNeural"],
+"Chinese (Wu Dialect)": ["wuu-CN-XiaotongNeural","wuu-CN-YunzheNeural"],
 }
 
 
